@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestWPF.ViewModels
 {
-    public abstract class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
         // Для обновления частей интерфейса
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -16,7 +16,5 @@ namespace TestWPF.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        public abstract void DoTabRequest(string v);
     }
 }

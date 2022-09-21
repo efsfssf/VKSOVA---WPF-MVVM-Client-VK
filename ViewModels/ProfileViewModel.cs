@@ -86,10 +86,5 @@ namespace TestWPF.ViewModels
 			});
 
         }
-
-		public override void DoTabRequest(string v)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }

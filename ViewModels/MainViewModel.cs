@@ -25,9 +25,5 @@ namespace TestWPF.ViewModels
             OnPropertyChanged(nameof(CurrentViewModel));
         }
 
-        public override void DoTabRequest(string v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

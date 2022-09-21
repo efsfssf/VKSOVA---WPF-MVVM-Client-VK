@@ -72,10 +72,5 @@ namespace TestWPF.ViewModels
             }
         }
 
-
-        public override void DoTabRequest(string v)
-        {
-            Debug.WriteLine(v);
-        }
     }
 }

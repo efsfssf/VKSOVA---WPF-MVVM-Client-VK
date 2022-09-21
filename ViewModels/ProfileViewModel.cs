@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using TestWPF.Commands;
+using TestWPF.Messages;
 using TestWPF.Models;
 using TestWPF.Services;
 using TestWPF.Store;
 
 namespace TestWPF.ViewModels
 {
-    public class MakeUsersViewModel: ViewModelBase
+    public class ProfileViewModel: ViewModelBase
     {
 		private string? _name;
 
@@ -54,18 +56,40 @@ namespace TestWPF.ViewModels
 			}
 		}
 
-		public ICommand SubmitCommand { get; }
+        private string? _access_token;
+
+        public string? Access_token
+        {
+            get { return _access_token; }
+            set
+            {
+                _access_token = value;
+                OnPropertyChanged(nameof(Access_token));
+            }
+        }
+
+        public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
 
-		public MakeUsersViewModel(Main main, NavigationService addUserViewNavigationService, NavigationService make)
+        private readonly MessageBus _messageBus;
+        public ProfileViewModel(Main main, NavigationService addUserViewNavigationService, NavigationService make, MessageBus messageBus)
 		{
-
+            _messageBus = messageBus;
             MakeUsersCommand = new NavigateCommand(make);
             // Передаем команде данные переменных этого класса, и освновной класс
             SubmitCommand = new MakeUsersCommand(this, main, addUserViewNavigationService);
 			CancelCommand = new BackCommand(addUserViewNavigationService);
 
+            _messageBus.Receive<TextMessage>(this, message => {
+                Access_token = message.Text;
+				return Task.CompletedTask;
+			});
+
         }
 
-    }
+		public override void DoTabRequest(string v)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

@@ -19,11 +19,13 @@ namespace TestWPF
     public partial class App : Application
     {
         private readonly Main _main;
+        private readonly MessageBus _messageBus;
         private readonly NavigationStore _navigationStore;
         public App()
         {
             _main = new Main("Simple app");
             _navigationStore = new NavigationStore();
+            _messageBus = new MessageBus();
         }
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -46,14 +48,14 @@ namespace TestWPF
             MainWindow.Show();
         }
 
-        private MakeUsersViewModel CreateMakeUsersViewModel()
+        private ProfileViewModel CreateMakeUsersViewModel()
         {
-            return new MakeUsersViewModel(_main, new NavigationService(_navigationStore, CreateUsersListingViewModel), new NavigationService(_navigationStore, CreateMakeUsersViewModel));
+            return new ProfileViewModel(_main, new NavigationService(_navigationStore, CreateUsersListingViewModel), new NavigationService(_navigationStore, CreateMakeUsersViewModel), _messageBus);
         }
 
-        private UsersListingViewModel CreateUsersListingViewModel()
+        private LoginViewModel CreateUsersListingViewModel()
         {
-            return new UsersListingViewModel(_main, new NavigationService(_navigationStore, CreateMakeUsersViewModel));
+            return new LoginViewModel(_main, new NavigationService(_navigationStore, CreateMakeUsersViewModel), _messageBus);
         }
     }
 }

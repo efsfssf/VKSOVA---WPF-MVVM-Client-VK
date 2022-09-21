@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ using TestWPF.VK_api;
 
 namespace TestWPF.ViewModels
 {
-    public class UsersListingViewModel: ViewModelBase
+    public class LoginViewModel: ViewModelBase
     {
 
         private string? _login;
@@ -50,12 +51,12 @@ namespace TestWPF.ViewModels
 
         public IEnumerable<UserViewModel> Users => _users;
 
-        public UsersListingViewModel(Main main, NavigationService makeUsersViewModel)
+        public LoginViewModel(Main main, NavigationService makeUsersViewModel, MessageBus messageBus)
         {
             _main = main;
             _users = new ObservableCollection<UserViewModel>();
 
-            loginAppCommand = new LoginCommand(this, makeUsersViewModel);
+            loginAppCommand = new LoginCommand(this, makeUsersViewModel, messageBus);
 
             UpdateUsers();
         }
@@ -69,6 +70,12 @@ namespace TestWPF.ViewModels
                 UserViewModel userViewModel = new UserViewModel(user);
                 _users.Add(userViewModel);
             }
+        }
+
+
+        public override void DoTabRequest(string v)
+        {
+            Debug.WriteLine(v);
         }
     }
 }

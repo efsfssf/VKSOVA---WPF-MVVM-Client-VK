@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using TestWPF.Commands;
 using TestWPF.Store;
 using TestWPF.ViewModels;
 
@@ -15,6 +16,9 @@ namespace TestWPF.Services
         private readonly NavigationStore _navigationStore;
         private readonly Func<ViewModelBase> _createViewModel;
         public ViewModelBase last;
+
+        private RelayCommand _aCommandWithAParameter;
+
 
         public NavigationService(NavigationStore navigationStore, Func<ViewModelBase> createViewModel)
         {
@@ -29,7 +33,11 @@ namespace TestWPF.Services
 
         public void Login(string access_token)
         {
-            _navigationStore.CurrentViewModel = _createViewModel();
+            ViewModelBase viewModel = _createViewModel();
+            
+            _navigationStore.CurrentViewModel = viewModel;
+
+
         }
 
 

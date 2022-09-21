@@ -17,10 +17,10 @@ namespace TestWPF.Commands
     {
         private readonly Main _main;
         private readonly NavigationService _addUserViewNavigationService;
-        private MakeUsersViewModel _makeUsersViewModel;
+        private ProfileViewModel _makeUsersViewModel;
 
         private int _count = 1;
-        public MakeUsersCommand(MakeUsersViewModel makeUsersViewModel, Main main, NavigationService addUserViewNavigationService)
+        public MakeUsersCommand(ProfileViewModel makeUsersViewModel, Main main, NavigationService addUserViewNavigationService)
         {
             _makeUsersViewModel = makeUsersViewModel;
             _main = main;
@@ -30,8 +30,8 @@ namespace TestWPF.Commands
 
         private void OnViewModelPropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
-            if(e.PropertyName == nameof(MakeUsersViewModel.Name) ||
-                e.PropertyName == nameof(MakeUsersViewModel.Sity)
+            if(e.PropertyName == nameof(ProfileViewModel.Name) ||
+                e.PropertyName == nameof(ProfileViewModel.Sity)
                 )
             {
                 OnCanExecuteChanged();

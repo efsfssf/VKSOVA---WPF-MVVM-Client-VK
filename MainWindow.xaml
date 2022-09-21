@@ -11,10 +11,10 @@
         >
     <Grid Margin="20 10" MaxWidth="600">
         <Grid.Resources>
-            <DataTemplate DataType="{x:Type vms:MakeUsersViewModel}">
+            <DataTemplate DataType="{x:Type vms:ProfileViewModel}">
                 <views:MakeUsers />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type vms:UsersListingViewModel}">
+            <DataTemplate DataType="{x:Type vms:LoginViewModel}">
                 <views:UsersListingView />
             </DataTemplate>
         </Grid.Resources>

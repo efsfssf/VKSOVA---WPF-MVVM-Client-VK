@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Bezzu\source\repos\TestWPF\App.xaml
-3558966621
+3-338989228
 
-30-746852386
+35377030174
 197-132997233
-MainWindow.xaml;Views\MakeUsers.xaml;Views\UsersListingView.xaml;
+MainWindow.xaml;Views\LoginView.xaml;Views\ProfileView.xaml;
 
 False
 

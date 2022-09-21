@@ -140,13 +140,9 @@ C:\Users\Bezzu\source\repos\TestWPF\bin\x64\Debug\net6.0-windows\zh-TW\ModernWpf
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\TestWPF.csproj.AssemblyReference.cache
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\MainWindow.baml
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\MainWindow.g.cs
-C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\MakeUsers.g.cs
-C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\UsersListingView.g.cs
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\App.g.cs
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\TestWPF_MarkupCompile.cache
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\TestWPF_MarkupCompile.lref
-C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\MakeUsers.baml
-C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\UsersListingView.baml
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\TestWPF.g.resources
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\TestWPF.Properties.Resources.resources
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\TestWPF.csproj.GenerateResource.cache
@@ -163,3 +159,7 @@ C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\ref\TestWPF.dll
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\App.baml
 C:\Users\Bezzu\source\repos\TestWPF\bin\x64\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\LoginView.g.cs
+C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\LoginView.baml
+C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\ProfileView.g.cs
+C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\ProfileView.baml

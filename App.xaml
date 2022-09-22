@@ -4,13 +4,13 @@
              xmlns:ui="http://schemas.modernwpf.com/2019"
              xmlns:local="clr-namespace:TestWPF">
     <Application.Resources>
-        
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ui:ThemeResources />
-                <ui:XamlControlsResources />
+
+        <!--<ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+            <ui:ThemeResources />
+            <ui:XamlControlsResources />
                 
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>-->
     </Application.Resources>
 </Application>

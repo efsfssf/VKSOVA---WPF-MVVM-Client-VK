@@ -17,7 +17,7 @@ namespace TestWPF
         public MainWindow()
         {
             InitializeComponent();
-            Loaded += OnLoaded;
+            //Loaded += OnLoaded;
         }
 
         void OnLoaded(object sender, RoutedEventArgs e)

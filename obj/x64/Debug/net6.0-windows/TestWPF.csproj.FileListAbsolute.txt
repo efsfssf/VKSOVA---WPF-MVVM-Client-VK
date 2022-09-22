@@ -157,7 +157,6 @@ C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\TestWPF.pdb
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\TestWPF.genruntimeconfig.cache
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\ref\TestWPF.dll
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
-C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\App.baml
 C:\Users\Bezzu\source\repos\TestWPF\bin\x64\Debug\net6.0-windows\Newtonsoft.Json.dll
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\LoginView.g.cs
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\LoginView.baml

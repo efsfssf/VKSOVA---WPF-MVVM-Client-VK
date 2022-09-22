@@ -39,12 +39,12 @@ namespace TestWPF
             
 
             base.OnStartup(e);
-            if (Environment.OSVersion.Version.Build < 22523)
-            {
-                MessageBox.Show("This demonstration requires Windows 11 Insider Preview build 22523 or newer.", "Incompatible Windows build", MessageBoxButton.OK, MessageBoxImage.Error);
-                Shutdown();
-                return;
-            }
+            //if (Environment.OSVersion.Version.Build < 22523)
+            //{
+            //    MessageBox.Show("This demonstration requires Windows 11 Insider Preview build 22523 or newer.", "Incompatible Windows build", MessageBoxButton.OK, MessageBoxImage.Error);
+            //    Shutdown();
+            //    return;
+            //}
             MainWindow.Show();
         }
 

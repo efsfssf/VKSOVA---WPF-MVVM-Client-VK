@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Web.WebView2.Core;
+using Microsoft.Web.WebView2.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,17 @@ namespace TestWPF.Views
         public UsersListingView()
         {
             InitializeComponent();
+        }
+
+        private void WebView_OnNavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs args)
+        {
+            if (args.IsSuccess)
+            {
+                var bindingExpression =
+                    webView.GetBindingExpression(WebView2.SourceProperty);
+                if (webView.Source?.AbsoluteUri != null)
+                    bindingExpression?.UpdateSource();
+            }
         }
     }
 }

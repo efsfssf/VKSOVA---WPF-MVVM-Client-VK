@@ -9,7 +9,7 @@
         Background="Transparent"
         Title="TEST WPF MVVM" Height="450" Width="800" FontSize="14"
         >
-    <Grid Margin="20 10" MaxWidth="600">
+    <Grid Margin="20 10">
         <Grid.Resources>
             <DataTemplate DataType="{x:Type vms:ProfileViewModel}">
                 <views:MakeUsers />
@@ -19,6 +19,6 @@
             </DataTemplate>
         </Grid.Resources>
 
-        <ContentControl Content="{Binding CurrentViewModel}" />
+        <ContentControl Content="{Binding CurrentViewModel}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
     </Grid>
 </Window>

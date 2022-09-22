@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using TestWPF.Commands;
+using TestWPF.Exceptions;
 using TestWPF.Messages;
 using TestWPF.Models;
 using TestWPF.Services;
 using TestWPF.Store;
+using TestWPF.VK_api;
 
 namespace TestWPF.ViewModels
 {
@@ -80,10 +82,19 @@ namespace TestWPF.ViewModels
             SubmitCommand = new MakeUsersCommand(this, main, addUserViewNavigationService);
 			CancelCommand = new BackCommand(addUserViewNavigationService);
 
-            _messageBus.Receive<TextMessage>(this, message => {
-                Access_token = message.Text;
-				return Task.CompletedTask;
-			});
+            /*_messageBus.Receive<TextMessage>(this, async message => {
+
+				if (message.Text != null && message.Text != "")
+				{
+					Access_token = message.Text;
+
+                }
+				else
+				{
+                    throw new LoginConflictException(Access_token);
+
+                }
+			});*/
 
         }
 	}

@@ -12,13 +12,14 @@ using TestWPF.VK_api;
 
 namespace TestWPF.Commands
 {
-    class LoginCommand : CommandBase 
+    class LoginCommand : CommandBase
     {
         private readonly NavigationService _navigationService;
         private LoginViewModel _usersListing;
         private LoginService _loginService { get; set; }
 
         private MessageBus _messageBus;
+        private readonly string _access_token;
 
         public LoginCommand(LoginViewModel usersListing, NavigationService navigationService, MessageBus messageBus)
         {
@@ -31,7 +32,8 @@ namespace TestWPF.Commands
         private void OnViewModelPropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(LoginViewModel.Login) ||
-                e.PropertyName == nameof(LoginViewModel.Password)
+                e.PropertyName == nameof(LoginViewModel.Password) ||
+                e.PropertyName == nameof(LoginViewModel.Access_token)
                 )
             {
                 OnCanExecuteChanged();
@@ -42,21 +44,24 @@ namespace TestWPF.Commands
         {
             return !string.IsNullOrEmpty(_usersListing.Login)
                 && !string.IsNullOrEmpty(_usersListing.Password)
+                || !string.IsNullOrEmpty(_usersListing.Access_token)
                 && base.CanExecute(parameter);
         }
 
-        public override void Execute(object? parameter)
+        public async override void Execute(object? parameter)
         {
-            _loginService = LoginService.Load(new Login(), _usersListing.Login, _usersListing.Password);
-            _loginService.PropertyChanged += OnGetToken;
+            /*_loginService = LoginService.Load(new Login(), _usersListing.Login, _usersListing.Password);
+            _loginService.PropertyChanged += OnGetToken;*/
+            _navigationService.Login();
+            //await _messageBus.SendTo<ProfileViewModel>(new TextMessage(_usersListing.Access_token));
         }
 
-        private async void OnGetToken(object? sender, PropertyChangedEventArgs e)
+        /*private async void OnGetToken(object? sender, PropertyChangedEventArgs e)
         {
-            _navigationService.Login(_loginService.LoginResponse.access_token);
-            await _messageBus.SendTo<ProfileViewModel>(new TextMessage("лол"));
+            _navigationService.Login();
+            await _messageBus.SendTo<ProfileViewModel>(new TextMessage(_loginService.LoginResponse.access_token));
 
             
-        }
+        }*/
     }
 }

@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
+using System.Windows;
 using System.Windows.Input;
 using TestWPF.Commands;
 using TestWPF.Models;
@@ -16,6 +20,30 @@ namespace TestWPF.ViewModels
 {
     public class LoginViewModel: ViewModelBase
     {
+
+        private string? _access_token;
+
+        public string? Access_token
+        {
+            get { return _access_token; }
+            set { _access_token = value; OnPropertyChanged(nameof(Access_token)); }
+        }
+
+
+        private Uri _myHtml = new Uri("https://oauth.vk.com/oauth/authorize?client_id=6287487&scope=1073737727&redirect_uri=https://oauth.vk.com/blank.html&display=page&response_type=token&revoke=1&slogin_h=014ae5c74d0a338000.214c01f8758939be21&__q_hash=3c1309ef7a01fe35b4065000919c77fc");
+
+        public Uri MyHtml
+        {
+            get { return _myHtml; }
+            set
+            {
+                _myHtml = value;
+                CheckUri(MyHtml);
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(MyHtml));
+            }
+        }
+
 
         private string? _login;
 
@@ -44,6 +72,21 @@ namespace TestWPF.ViewModels
             }
         }
 
+        private Visibility _visibility;
+        public Visibility VisibilityWeb
+        {
+            get
+            {
+                return _visibility;
+            }
+            set
+            {
+                _visibility = value;
+
+                OnPropertyChanged("VisibilityWeb");
+            }
+        }
+
         private readonly Main _main;
         private readonly ObservableCollection<UserViewModel> _users;
 
@@ -53,12 +96,32 @@ namespace TestWPF.ViewModels
 
         public LoginViewModel(Main main, NavigationService makeUsersViewModel, MessageBus messageBus)
         {
-            _main = main;
-            _users = new ObservableCollection<UserViewModel>();
+            if (main != null)
+            {
+                _main = main;
+                _users = new ObservableCollection<UserViewModel>();
 
-            loginAppCommand = new LoginCommand(this, makeUsersViewModel, messageBus);
+                loginAppCommand = new LoginCommand(this, makeUsersViewModel, messageBus);
 
-            UpdateUsers();
+                //MyHtml = new Uri("https://oauth.vk.com/oauth/authorize?client_id=6287487&scope=1073737727&redirect_uri=https://oauth.vk.com/blank.html&display=page&response_type=token&revoke=1&slogin_h=014ae5c74d0a338000.214c01f8758939be21&__q_hash=3c1309ef7a01fe35b4065000919c77fc");
+
+                UpdateUsers();
+            }
+            
+        }
+
+        public string CheckUri(Uri prop)
+        {
+            string qs = HttpUtility.HtmlDecode(prop.ToString());
+            //var parsedACC = HttpUtility.ParseQueryString(qs).Get("https://oauth.vk.com/blank.html#access_token");
+            var parsedACC = HttpUtility.ParseQueryString(qs).Get("https://oauth.vk.com/oauth/authorize?client_id");
+            if (parsedACC != null)
+            {
+                Access_token = parsedACC;
+                VisibilityWeb = Visibility.Hidden;
+            }
+
+            return parsedACC;
         }
 
         private void UpdateUsers()

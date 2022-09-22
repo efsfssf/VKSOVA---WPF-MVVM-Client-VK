@@ -22,8 +22,8 @@ namespace TestWPF.Services
             return loginService;
         }
 
-        private DataDTO _loginResponse;
-        public DataDTO LoginResponse
+        private LoginDTO _loginResponse;
+        public LoginDTO LoginResponse
         {
             get
             {
@@ -52,13 +52,14 @@ namespace TestWPF.Services
 
         public void authorization()
         {
-            _APIService.GetAPIService(_login, _password).ContinueWith(task =>
+            /*_APIService.GetAPIService(_login, _password).ContinueWith(task =>
             {
                 if (task.Exception == null)
                 {
                     LoginResponse = task.Result;
                 }
-            });
+            });*/
+
         }
 
     }

@@ -9,6 +9,6 @@ namespace TestWPF.Services
 {
     public interface IAPIService
     {
-        Task<DataDTO> GetAPIService(string login, string password);
+        Task<LoginDTO> GetAPIService(string login, string password);
     }
 }

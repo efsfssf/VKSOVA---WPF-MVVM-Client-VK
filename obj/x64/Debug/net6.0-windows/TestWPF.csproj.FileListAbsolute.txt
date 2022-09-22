@@ -163,3 +163,10 @@ C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\LoginView
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\LoginView.baml
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\ProfileView.g.cs
 C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\Views\ProfileView.baml
+C:\Users\Bezzu\source\repos\TestWPF\bin\x64\Debug\net6.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\Bezzu\source\repos\TestWPF\bin\x64\Debug\net6.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\Bezzu\source\repos\TestWPF\bin\x64\Debug\net6.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\Bezzu\source\repos\TestWPF\bin\x64\Debug\net6.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\Bezzu\source\repos\TestWPF\bin\x64\Debug\net6.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\Bezzu\source\repos\TestWPF\bin\x64\Debug\net6.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\Bezzu\source\repos\TestWPF\obj\x64\Debug\net6.0-windows\TestWPF_Content.g.cs

@@ -6,6 +6,39 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
+      "Microsoft.Web.WebView2/1.0.1343.22": {
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Core.dll": {
+            "assemblyVersion": "1.0.1343.22",
+            "fileVersion": "1.0.1343.22"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.WinForms.dll": {
+            "assemblyVersion": "1.0.1343.22",
+            "fileVersion": "1.0.1343.22"
+          },
+          "lib/netcoreapp3.0/Microsoft.Web.WebView2.Wpf.dll": {
+            "assemblyVersion": "1.0.1343.22",
+            "fileVersion": "1.0.1343.22"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/WebView2Loader.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "1.0.1343.22"
+          },
+          "runtimes/win-x64/native/WebView2Loader.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.0.1343.22"
+          },
+          "runtimes/win-x86/native/WebView2Loader.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.0.1343.22"
+          }
+        }
+      },
       "ModernWpfUI/0.9.5": {
         "runtime": {
           "lib/net5.0-windows7.0/ModernWpf.Controls.dll": {
@@ -427,6 +460,13 @@
     }
   },
   "libraries": {
+    "Microsoft.Web.WebView2/1.0.1343.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bTMvDqqk4QJhfdJT64jMX/LnXzrJm5Q7J8alJ5mZ+ffZfCn6zFEwP9nh34k6ug8ZOQeMEpV7ggt7GMXAIkrWdQ==",
+      "path": "microsoft.web.webview2/1.0.1343.22",
+      "hashPath": "microsoft.web.webview2.1.0.1343.22.nupkg.sha512"
+    },
     "ModernWpfUI/0.9.5": {
       "type": "package",
       "serviceable": true,

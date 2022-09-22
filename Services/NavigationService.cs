@@ -17,8 +17,6 @@ namespace TestWPF.Services
         private readonly Func<ViewModelBase> _createViewModel;
         public ViewModelBase last;
 
-        private RelayCommand _aCommandWithAParameter;
-
 
         public NavigationService(NavigationStore navigationStore, Func<ViewModelBase> createViewModel)
         {
@@ -31,13 +29,10 @@ namespace TestWPF.Services
             _navigationStore.AddHistory(_navigationStore.CurrentViewModel);
         }
 
-        public void Login(string access_token)
+        public void Login()
         {
             ViewModelBase viewModel = _createViewModel();
-            
             _navigationStore.CurrentViewModel = viewModel;
-
-
         }
 
 
